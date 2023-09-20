@@ -29,7 +29,7 @@ if [[ -d /docker/auto_spy_data/autospy  ]]; then
 else
 	mkdir auto_spy_data
     docker run -dit --restart=always --name=auto_spy --hostname=auto_spy xieshang1111/auto_spy:$arch
-	docker cp auto_spy:/autospy/ /docker/auto_spy_data/autospy
+	docker cp auto_spy:/autospy/ docker/auto_spy_data/autospy
 	docker stop auto_spy
 	docker rm auto_spy	
 	echo -n -e "检测到autospy配置文件不存在，如之前直装过auto_spy,请输入绝对路径以完成配置文件一键迁移(如没安装过，直接回车即可)："
